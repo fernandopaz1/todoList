@@ -1,6 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/django,python
-# Edit at https://www.toptal.com/developers/gitignore?templates=django,python
+# Created by https://www.toptal.com/developers/gitignore/api/django,python,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=django,python,visualstudiocode
 
 ### Django ###
 *.log
@@ -215,4 +215,21 @@ cython_debug/
 
 # Cython debug symbols
 
-# End of https://www.toptal.com/developers/gitignore/api/django,python
+### VisualStudioCode ###
+.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# End of https://www.toptal.com/developers/gitignore/api/django,python,visualstudiocode
