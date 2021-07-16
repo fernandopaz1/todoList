@@ -1,6 +1,19 @@
+{% load static %}
 <html>
     <body>
-        <p>Hi there!</p>
-        <p>It works!</p>
+        <div>
+            <h1><a href="/">Todo List</a></h1>
+        </div>
+
+        {% for todo in todos %}
+        <div>
+            <h2><a href="">{{ todo.title }}</a></h2>
+            <p>{{ todo.text|linebreaksbr }}</p>
+            <p>publicado: {{ todo.published_date }}</p>
+        </div>
+        {% endfor %}
+
+        <!-- <p>Hi there!</p>
+        <p>It works!</p> -->
     </body>
 </html>
