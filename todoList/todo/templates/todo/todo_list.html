@@ -1,19 +1,8 @@
-{% load static %}
-<html>
-    <body>
-        <div>
-            <h1><a href="/">Todo List</a></h1>
-        </div>
-
-        {% for todo in todos %}
-        <div>
-            <h2><a href="">{{ todo.title }}</a></h2>
-            <p>{{ todo.text|linebreaksbr }}</p>
-            <p>publicado: {{ todo.published_date }}</p>
-        </div>
-        {% endfor %}
-
-        <!-- <p>Hi there!</p>
-        <p>It works!</p> -->
-    </body>
-</html>
+{% extends 'todo/base.html' %} {% block content %} {% for todo in todos %}
+<div id="{{todo.title}}" class="todoDiv">
+    <h2 class="todoTitle"><a href="">{{ todo.title }}</a></h2>
+    <p class="todoDescription">{{ todo.text|linebreaksbr }}</p>
+    <p class="todoFecha">publicado: {{ todo.published_date|date:"F j, Y" }}</p>
+    <p class="todoAuthor">publicado: {{ todo.author }}</p>
+</div>
+{% endfor %} {% endblock %}
