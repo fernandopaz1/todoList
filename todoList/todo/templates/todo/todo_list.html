@@ -1,6 +1,8 @@
 {% extends 'todo/base.html' %} {% block content %} {% for todo in todos %}
 <div id="{{todo.title}}" class="todoDiv">
-    <h2 class="todoTitle"><a href="">{{ todo.title }}</a></h2>
+    <h2 class="todoTitle">
+        <a href="{% url 'todo_detail' pk=todo.pk %}">{{ todo.title }}</a>
+    </h2>
     <p class="todoDescription">{{ todo.text|linebreaksbr }}</p>
     <p class="todoFecha">publicado: {{ todo.published_date|date:"F j, Y" }}</p>
     <p class="todoAuthor">publicado: {{ todo.author }}</p>
