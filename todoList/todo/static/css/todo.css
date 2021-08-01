@@ -1,0 +1,21 @@
+.todoDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.todo {
+  width: 70%;
+  background-color: rgb(2, 100, 5, 0.4);
+  display: flex;
+  padding-bottom: 2rem;
+  padding-inline-start: 10rem;
+  flex-direction: column;
+  justify-content: initial;
+}
+
+.botones {
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+}

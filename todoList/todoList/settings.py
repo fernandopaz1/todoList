@@ -24,13 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-# Para generarn una key aleatoria 
+# Para generarn una key aleatoria
 # ╰─ python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DEBUG', default=False)
+
+print("----------------")
+print(DEBUG)
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
@@ -96,7 +99,7 @@ DATABASES = {
         'PASSWORD': env.str('DATABASE_PASSWORD'),
         'HOST': env.str('DATABASE_HOST'),
         'TEST': {
-        'PORT': env.str('DATABASE_PORT'),
+            'PORT': env.str('DATABASE_PORT'),
             'NAME': env.str('DATABASE_TEST'),
         },
     }
@@ -139,7 +142,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
