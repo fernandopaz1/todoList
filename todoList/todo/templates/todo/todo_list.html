@@ -14,7 +14,13 @@
         <button id="completar{{todo.title}}" class="completarTodo">
             Completada
         </button>
-        <button id="delte{{todo.title}}" class="delteTodo">Eliminar</button>
+        <button
+            id="delte{{todo.title}}"
+            class="delteTodo"
+            href="{% url 'todo_delete' pk=todo.pk %}"
+        >
+            Eliminar
+        </button>
     </div>
 </div>
 {% endfor %} {% endblock %}
