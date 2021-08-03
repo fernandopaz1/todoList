@@ -25,7 +25,8 @@ class Todo(models.Model):
         self.published_date = timezone.now()
         self.save()
 
-    def delete(self, pk):
+    @staticmethod
+    def delete_todo(pk):
         toDelete = Todo.objects.get(pk=pk)
         toDelete.delete()        
 
