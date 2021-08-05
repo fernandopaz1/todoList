@@ -4,32 +4,12 @@
         <h2 class="todoTitle">
             <a href="{% url 'todo_detail' pk=todo.pk %}">{{ todo.title }}</a>
         </h2>
+        <p class="todoEstado">{{ todo.state }}</p>
         <p class="todoDescription">{{ todo.text|linebreaksbr }}</p>
         <p class="todoFecha">
             publicado: {{ todo.published_date|date:"F j, Y" }}
         </p>
         <p class="todoAuthor">publicado: {{ todo.author }}</p>
-    </div>
-    <div class="botones">
-        <!-- <button id="completar{{todo.title}}" class="completarTodo">
-            Completada
-        </button> -->
-
-        <label for="states">Choose a car:</label>
-
-        <select name="states" id="states">
-            {% for choice in todo.states%}
-            <option value="{ {choice.1} }">{{choice.1}}</option>
-            {% endfor %}
-        </select>
-
-        <a
-            id="delte{{todo.title}}"
-            class="delteTodo btn btn-primary"
-            href="{% url 'todo_delete' pk=todo.pk %}"
-        >
-            Eliminar
-        </a>
     </div>
 </div>
 {% endfor %} {% endblock %}
