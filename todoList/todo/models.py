@@ -30,5 +30,14 @@ class Todo(models.Model):
         toDelete = Todo.objects.get(pk=pk)
         toDelete.delete()        
 
+    def set_state(self ,new_state):
+        self.state = new_state
+        self.save() 
+
+    @staticmethod
+    def change_state(pk, new_state):
+        toChange = Todo.objects.get(pk=pk)
+        toChange.set_state(new_state)
+
     def __str__(self):
         return self.title

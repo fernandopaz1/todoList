@@ -16,3 +16,8 @@ def todo_delete(request, pk):
     Todo.delete_todo(pk)
     todos = Todo.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'todo/todo_list.html', {'todos': todos}) 
+
+def change_state(request, pk, state):
+    Todo.change_state(pk, state)
+    todos = Todo.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    return render(request, 'todo/todo_list.html', {'todos': todos}) 
