@@ -11,9 +11,18 @@
         <p class="todoAuthor">publicado: {{ todo.author }}</p>
     </div>
     <div class="botones">
-        <button id="completar{{todo.title}}" class="completarTodo">
+        <!-- <button id="completar{{todo.title}}" class="completarTodo">
             Completada
-        </button>
+        </button> -->
+
+        <label for="states">Choose a car:</label>
+
+        <select name="states" id="states">
+            {% for choice in todo.states%}
+            <option value="{ {choice.1} }">{{choice.1}}</option>
+            {% endfor %}
+        </select>
+
         <a
             id="delte{{todo.title}}"
             class="delteTodo btn btn-primary"

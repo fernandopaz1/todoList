@@ -4,6 +4,15 @@ from django.utils import timezone
 
 
 class Todo(models.Model):
+    __states=(
+            ("backlog", "Backlog"),
+            ("bloqueada", "Bloqueada"),
+            ("enProceso", "En proceso"),
+            ("avanzada", "avanzada"),
+            ("atrazada", "Atrasada"),
+            ("terminada", "Terminada")
+        )
+    
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     text = models.TextField()
@@ -12,14 +21,7 @@ class Todo(models.Model):
     published_date = models.DateTimeField(
             blank=True, null=True)
     state = models.CharField( default='backlog',max_length=20,
-        choices=(
-            ("backlog", "Backlog"),
-            ("bloqueada", "Bloqueada"),
-            ("enProceso", "En proceso"),
-            ("avanzada", "avanzada"),
-            ("atrazada", "Atrasada"),
-            ("terminada", "Terminada")
-        ))
+        choices=__states)
     
     def publish(self):
         self.published_date = timezone.now()
@@ -38,6 +40,10 @@ class Todo(models.Model):
     def change_state(pk, new_state):
         toChange = Todo.objects.get(pk=pk)
         toChange.set_state(new_state)
+
+    @property
+    def states(self):
+        return Todo.__states
 
     def __str__(self):
         return self.title
