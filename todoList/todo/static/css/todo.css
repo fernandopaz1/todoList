@@ -1,21 +1,88 @@
-.todoDiv {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+body {
+    padding-left: 15px;
+}
+
+h1 a,
+h2 a {
+    color: #fca205;
+    font-family: "Lobster";
+}
+
+.page-header {
+    background-color: #c25100;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1,
+.page-header h1 a,
+.page-header h1 a:visited,
+.page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 40px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Lobster", cursive;
+}
+
+.date {
+    color: #828282;
+}
+
+.save {
+    float: right;
+}
+
+.todo-form textarea,
+.todo-form input {
+    width: 100%;
+}
+
+.top-menu,
+.top-menu:hover,
+.top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
 }
 
 .todo {
-  width: 70%;
-  background-color: rgb(2, 100, 5, 0.4);
-  display: flex;
-  padding-bottom: 2rem;
-  padding-inline-start: 10rem;
-  flex-direction: column;
-  justify-content: initial;
+    margin-bottom: 70px;
 }
 
+.todo h2 a,
+.todo h2 a:visited {
+    color: #000000;
+}
+
+.todoDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+/* .todo {
+    width: 70%;
+    background-color: rgb(2, 100, 5, 0.4);
+    display: flex;
+    padding-bottom: 2rem;
+    padding-inline-start: 10rem;
+    flex-direction: column;
+    justify-content: initial;
+} */
+
 .botones {
-  justify-content: space-evenly;
-  display: flex;
-  flex-direction: column;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
 }
