@@ -5,6 +5,7 @@
         <div class="date">{{ todo.published_date }}</div>
         {% endif %}
         <h2>{{ todo.title }}</h2>
+        <p class="todoEstado">{{ todo.state }}</p>
         <p>{{ todo.text|linebreaksbr }}</p>
     </div>
     <div class="botones">

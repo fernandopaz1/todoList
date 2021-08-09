@@ -56,10 +56,6 @@ h4 {
     margin-right: 20px;
 }
 
-.todo {
-    margin-bottom: 70px;
-}
-
 .todo h2 a,
 .todo h2 a:visited {
     color: #000000;
@@ -71,18 +67,26 @@ h4 {
     justify-content: space-evenly;
 }
 
-/* .todo {
+.todo {
+    margin-bottom: 70px;
     width: 70%;
+    height: fit-container;
     background-color: rgb(2, 100, 5, 0.4);
     display: flex;
     padding-bottom: 2rem;
     padding-inline-start: 10rem;
     flex-direction: column;
     justify-content: initial;
-} */
+}
 
 .botones {
     justify-content: space-evenly;
     display: flex;
     flex-direction: column;
+    background-color: rgb(2, 100, 5, 0.4);
+    /* width: 30%; */
+}
+
+.todotodoEstado {
+    color: #e70202;
 }
