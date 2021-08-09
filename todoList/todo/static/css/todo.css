@@ -65,12 +65,13 @@ h4 {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    height: fit-content;
 }
 
 .todo {
     margin-bottom: 70px;
     width: 70%;
-    height: fit-container;
+    height: fit-content;
     background-color: rgb(2, 100, 5, 0.4);
     display: flex;
     padding-bottom: 2rem;
@@ -79,12 +80,20 @@ h4 {
     justify-content: initial;
 }
 
-.botones {
+.buttonContainer {
+    background-color: rgb(2, 100, 5, 0.4);
+    height: auto;
+    width: 20rem;
+}
+
+.buttonsDiv {
+    display: flex;
+    width: 80%;
+    height: 100%;
     justify-content: space-evenly;
     display: flex;
     flex-direction: column;
-    background-color: rgb(2, 100, 5, 0.4);
-    /* width: 30%; */
+    margin: auto;
 }
 
 .todotodoEstado {

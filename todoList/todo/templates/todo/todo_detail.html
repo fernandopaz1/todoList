@@ -8,29 +8,33 @@
         <p class="todoEstado">{{ todo.state }}</p>
         <p>{{ todo.text|linebreaksbr }}</p>
     </div>
-    <div class="botones">
-        <label for="states">Selecionar estado:</label>
+    <div class="buttonContainer">
+        <div class="buttonsDiv">
+            <label for="states">Selecionar estado:</label>
 
-        <select
-            name="states"
-            id="states"
-            ONCHANGE="location = this.options[this.selectedIndex].value;"
-        >
-            <option value="">-----</option>
-            {% for choice in todo.states%}
-            <option value="{% url 'change_state' pk=todo.pk state=choice.1 %}">
-                {{choice.1}}
-            </option>
-            {% endfor %}
-        </select>
+            <select
+                name="states"
+                id="states"
+                ONCHANGE="location = this.options[this.selectedIndex].value;"
+            >
+                <option value="">-----</option>
+                {% for choice in todo.states%}
+                <option
+                    value="{% url 'change_state' pk=todo.pk state=choice.1 %}"
+                >
+                    {{choice.1}}
+                </option>
+                {% endfor %}
+            </select>
 
-        <a
-            id="delte{{todo.title}}"
-            class="delteTodo btn btn-primary"
-            href="{% url 'todo_delete' pk=todo.pk %}"
-        >
-            Eliminar
-        </a>
+            <a
+                id="delte{{todo.title}}"
+                class="delteTodo btn btn-primary"
+                href="{% url 'todo_delete' pk=todo.pk %}"
+            >
+                Eliminar
+            </a>
+        </div>
     </div>
 </div>
 {% endblock %}
